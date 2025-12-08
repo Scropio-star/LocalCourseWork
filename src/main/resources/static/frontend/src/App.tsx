@@ -57,6 +57,10 @@ const App = () => {
     return () => document.removeEventListener('mousedown', handleClick);
   }, []);
 
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location.pathname]);
+
   const toggleTheme = () => setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
   const refreshOps = () => setOperationRefresh((prev) => prev + 1);
   const showOperationLog = location.pathname === '/';
